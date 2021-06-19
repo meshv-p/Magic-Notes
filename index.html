@@ -7,29 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>notes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="phone.css"  media="screen and (max-width:700px)" >
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate css/4.1.1/animate.min.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <!-- <link href="bootstrap-tour-standalone.min.css" rel="stylesheet"> -->
+  
     
+
 </head>
 
 <body >
                 <div class="search">        <!--   for searching button-->
                     <input type="text" placeholder="Search"  id="searchTxt" >
-                        <i class="fa fa-search" ></i></div>
+                        <i class="fa fa-search" id="sea"></i></div>
+                        <div class="container" onclick="myFunction(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                          </div>
+                          
+            <div class="nV" id="nv">
+                <div class="box" id="box" >Home</div>
+                <div class="box" id="box2" >search</div>
+                <div class="box" id="box3" >Contact us</div>
+                <div class="box" id="box4" >About Us</div>
+            </div>
 
-    <!-- left side -->
+    
+     <!-- left side -->
     <div class="notes">
-        <div class="left">your's list
+        <div class="left" > &rAarr; your's list
             <ul>
-                <li><a href="#">All </a></li>
-                <li><a href="sec.html">Favorite</a> </li>
-                <li><a href="#"> important </a> </li>
+                <li><button class="sec"  onclick="alln()">All</button></li>
+                <li><button class="sec" id="left" onclick="favorite()">Favorite</button></li>
+                <li><button class="sec" onclick="imp()" >Important</button></li>
             </ul>
-
+            <span class="icon">&rtrif; </span>
         </div>  
 
         <!-- Right side -->
@@ -44,37 +58,57 @@
             <!-- Notes1 -->
            <div id="n1">
                 <div class="note1" id="p1">
-                    <input type="text" placeholder="Task 1" id="t1" ><input type="text" id="des"
+                    <input type="text" placeholder="Task 1" id="t1"><input type="text" id="des"
                         placeholder="Description">
-                    <button id="b1"  title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button> 
-                    <span class="time" >time  </span>
-                </div>  
+                    <button id="b1"  class="outline" title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button>                   
+                </div>
+                   <!-- option bar -->
+                <div class="option" id="opt">
+                    <button class="btn che" title="If Your notes is done You can tick cross." onclick="check()"><i class="fa fa-check " ></i></button> <!-- checked -->
+                    <button class="btn remove" title="If it is done then remove Notes." onclick="remove()"><i class="fa fa-trash-alt" ></i></button> <!-- remove -->
+                    <button class="btn pin" title="Favorite notes so You can see in favorite section." id="me" onclick="star(this.id)"><i class="fa fa-star"></i></button> <!-- pinned -->
+                    <button class="btn time1"  title="Put timer so You dont forget to do that." onclick="timer()"><i  class="fa fa-clock"></i></button><!--time-->
+                    <hr id="hr21">
+                    <!-- <button class="btn share mobile" title="Share notes with Your friends and families member." onclick="window.open('whatsapp://send?text=https://meshv-p.github.io/Notes')"><i class="fa fa-share"></i></button> share -->
+                    <!-- <button class="btn share pc" title="Share notes with Your friends and families member." onclick="window.open('https://web.whatsapp.com://send?text=https://meshv-p.github.io/Notes')"><i class="fa fa-share"></i></button> share -->
+                    <button class="btn share" onclick="share()"><i class="fa fa-share"></i></button>
+                    <hr id="hr22">
+                    <div class="color">
+                        <button class="btn red" title="Red" onclick="red()"></button> <!-- red -->
+                        <button class="btn b" title="Blue" onclick="blue()"></button> <!-- blue -->
+                        <button class="btn last g" title="Green" onclick="green()"></button><!--green  -->
+                        <button class="btn yellow" title="Yellow" onclick="yellow()"></button>
+                        <button class="btn li" title="LightGreen" onclick="lightgreen()"></button>
+                        <button class="btn last sr" title="Silver" onclick="silver()"></button>
+                    </div>
+                    <div class="text">Colors</div>
+                    <span class="font " id="ch" >Checked</span>
+                    <span class="font " id="re" >Remove</span>
+                    <span class="font " id="pi" >Pinned</span>
+                    <span class="font " id="ti" >Timer</span>
+                    <span class="font " id="sh" >Share</span>
+                </div>
+
+
+
                 <!-- setting  -->
-                     <div  class="bar"   id="bar">
-                            <button onclick="checked()"   onblur="removebar()"  class="btnc"><i class="fa fa-check check"></i> </button>
-                            <button class="remove" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                     <!-- <div  class="bar" id="bar">
+                            <button onclick="checked()" onblur="removebar()"  class="btnc outline"><i class="fa fa-check check"></i> </button>
+                            <button class="remove outline" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
                             
-                        <button class="gr" onclick="colors()"><i class="fa fa-greater-than"></i></button>
-                                   
+                        <button class="gr outline" onclick="colors()"><i class="fa fa-greater-than"></i></button>                                  
                               <div class="colors" id="color">
                                 <button  id="b12" style="background: pink;border-radius: 7px; margin-left: 7px;" onclick="important()"><i class="fas fa-exclamation"></i></button>
                                 <button onclick="red()"    title="red" class="btn red"  ></button>
                                 <button onclick="green()"  title="green" class="btn  green"></button>
                                 <button onclick="yellow()" title="yellow" class="btn yellow"></button>   
-                              </div> 
-                            
+                              </div>                           
+                    </div>  -->
+           </div>
 
-
-                           
-                    </div> 
-
-
-                <!--setting bar-->
-               <div class="op" id="optio">
-                    <button onclick="checked()" class="btnc"><i class="fa fa-check check"></i> </button>
-                    <button class="remove" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
-                </div> 
-             </div>
+               <div id="fnotes" style="display: none;">
+                   meshv patel  <h2 id="h2">Favorite Notes</h2>
+               </div>
 
             
             <!-- add null notes -->
@@ -85,26 +119,40 @@
                         <hr  id="hr2">
             <!-- footer side -->
             <div class="footer" style="right: 0px;">
-                <input type="text"   id="addText2"  required  class="title" min="2" placeholder="Add new Title">
-                <input type="text" id="addText"  onclick="AddTitle()"  placeholder="Add new Task"  required>
+               <form > <input type="text"   id="addText2"  required  class="title" min="2" placeholder="Add new Title">
+                <input type="text" id="addText"  onclick="AddTitle()"  placeholder="Add new Task"  required></form>
                 <div class="plus1" id="pl">
-                    <button type="submit"   title="add notes"    id="plus" class="plus" >+</button>
+                    <button type="submit"   title="add notes"  id="plus" class="plus" >+</button>
                    
                 </div>
             </div>
            
         </div>
     </div>
-    <!-- <div  id="done">
-        done    time is  <span id="time"> </span>
-    </div> -->
 
+  
+   <div class="timer" id="timer">
+    <input type="datetime-local" class="Date" id="Date" >
+    <button onclick="submit()" id="Set" class="set">Set Timer</button>
+    <button onclick="cancel()" >Clear</button>
+   </div>
+  
+<span  id="time"></span>
+   <!-- for phone icon bar -->
     <div class="footer-icon">
-           
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30" style=" fill:#000000;"><path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path></svg>  
-            <div class="vl"></div>
-
+        
+           <button onclick="alln()" id="img1" class="btn"><img src="https://img.icons8.com/fluent-systems-filled/20/000000/border-all.png"/></button>
+          <button  onclick="favorite()"  id="img2"> <i class="fas fa-star" ></i> </button>
+          <img  id="img3" src="https://img.icons8.com/fluent-systems-filled/20/000000/assignment-late.png"/>
+          <span class="iconlast activebtn" id="allnotes">All Notes</span>
+          <span class="iconlast lastfa" id="fav">Favorite</span>
+          <span class="iconlast lastimp">Important</span>
+          <hr  id="lasthr">
+          <hr  id="lasthr2">
     </div>
+    
+      
+  
     <script src="app.js"></script>
     
 </body>

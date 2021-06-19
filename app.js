@@ -6,7 +6,7 @@ showNotes();
         // for burger icon
         function myFunction(x) {
             x.classList.toggle("change");
-            
+            document.getElementById("fi").style.marginTop="195px";
             if( window.matchMedia("(max-width:500px)").matches){
                 if(document.getElementById("nv").style.width != "356px"){
                     document.getElementById("nv").style.width = "356px";

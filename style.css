@@ -1,48 +1,123 @@
- /* ::-webkit-scrollbar {
-    width:10px;
-} 
-::-webkit-scrollbar-track{
-    background-color: #fbaf00;
-} 
-::-webkit-scrollbar-thumb {
-    background: #888; 
-}  */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+body{
+    font-family: 'Baloo Bhaina 2', cursive;
+    min-height: 100vh;
+}
+
+.box{
+    display: flex;
+    margin: 15px auto;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    /* display: none; */
+}
+.box:hover{
+    color: red;
+}
+.nV{
+    width: 0;  /*150*/
+    height: 285px;
+    background-color: black;
+    color: white;
+    /* display: inline-block; */
+    border-radius: 10px;
+    transition: .8s;
+    display: none;
+}
+.nV ul li {
+    list-style: none;
+}
 /* main div */
 .notes {   
     /* border: 2px solid red; */
     width: 100vw;
     height: 100vh;
+    display: inline;
 }      /*  end */
-
 /* left div */
-
+.sec{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: magenta;
+}
+.container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-4px, 3px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+.icon{
+    position: relative;
+    top: -87px;  /*-73*/
+    left: -35px;
+    font-size: 24px;
+}
 .left {
     display: inline-block;
-    width: 100px;
-    margin-left: 212px;
-    height: 200px;
-    position: absolute;
-    /* top: 0px; */
+    width: 130px;  
+    height: 140px;
+    position: absolute;  
     border: 2px solid yellow;
-    margin-top: 75px;
+    border-radius: 10px;
+    left: 165px;
+    top: 97px;
+    text-align: center;
+    
 }   /*  end */
-
+.left ul li {
+    list-style: none;
+    text-align: left;
+    height: 22px;  /*defalut : none*/
+}
+ul{
+    margin-top: 7px ;
+}
+.left :hover{
+    list-style: circle;
+    color: maroon;
+}
+.sec:hover{
+    text-decoration: underline;
+    color: maroon;
+    list-style:circle ;
+}
 /* right div */
 
 .right {
     display: inline-block;
     width: 496px;
     height: 95vh;
-    position: relative;
+    position: absolute;
     margin-top: 3px;
-    margin-left: 389px;
+    margin-left: 389px; /*389*/
     border: 1px solid black;
     border-radius: 10px;
     /* background-color: rgb(70, 209, 255);    ffc947 */
     background-color: #ebebeb ;
     overflow: hidden;
-    
+    top: 30px;
 }   /*  end */
+
 .notesList{
     overflow:auto;
     overflow-x: hidden;
@@ -60,8 +135,16 @@
 
 #n1{
     margin-top: -8px;
-
 }
+.full{
+   
+    width: 500px;
+    height: 70px;
+    margin-top: 10px;
+    box-shadow: 1px 2px 3px;
+}
+
+
    /* header in right   */
 header {
     text-align: center;
@@ -96,7 +179,7 @@ header {
 #des {
     display: block;
     margin-left: 8px;
-    margin-top: 15px;
+    margin-top: 6px;  /*15*/
     border-radius: 7px;
     width: 90%;
     border: white;
@@ -132,6 +215,7 @@ header {
 /* button for settigns  */
 #b1{
     position: relative;
+    outline: none;
     top: -38px;
     right: -454px;
     font-size: 23px;
@@ -154,7 +238,8 @@ header {
     width: 27px;
     border-radius: 24px;
     height: 25px;
-    margin-left: 150px;
+    margin-left: 17px;
+    margin-top: 15px;
 }
 .remove{                        /*   class*/
     border: none;
@@ -162,7 +247,8 @@ header {
     width: 27px;
     border-radius: 24px;
     height: 25px;
-    margin-left: 52px;
+    margin-left: 82px;
+    /* margin-l: 82px; */
 }
 
 .check {
@@ -268,7 +354,7 @@ header {
 
 #hr2 {
     position: relative;
-    top: -4px;
+    top: -7px;
 }
 
 /* footer side */
@@ -277,10 +363,12 @@ header {
     margin: 0px 3px;
     border-radius: 7px;
     position: absolute;
-    top: 89.6%;  /*561  590*/
+    top: 88.5%;  /*561  590*/
     width: 98% ;
     right:  0px;
     left: 0px;
+    /* border: 1px solid black; */
+    height: 64px;
 }    /*  end */
 
 /* new notes add */
@@ -291,7 +379,8 @@ header {
     border: 1px solid black;
     outline: none;
     position:relative;
-    top: 27px;
+    top: 35px;
+    /* display: inline-block; */
 }     /*  end */
 
 /*  div plus icon for new notes */
@@ -299,8 +388,9 @@ header {
     display: inline;
     height: 26px;
     width: 28px;
+    position: absolute;
+    top: 34px;
     
-
 
 }    /*  end */
 
@@ -318,27 +408,170 @@ header {
     border: 1px solid black;
     outline: none;
     display:none;
+    margin: 0px 25px;
 }     /*  end */
 
 
 /*   plus button for adding notes */
-#plus {   
+.plus {   
     border-radius: 14px;
-    border: none;
-    /* background-color: #000; */
-    background-color: #fbaf00;
+    border: none;  
     color: white;
     font-size: 22px;
     width: 26px;
     height: 27px;
-    cursor: pointer;
     position: relative;
-    /* top: -25px; */
     left: 465px;
+    /* transform: rotate(10deg); */
+    pointer-events: none;
+    background-color: #fbb000b2;
+    opacity: 0.6;
+    top: 0px;
+}
+
+.active{
+    cursor: pointer;
+    background-color: #fbaf00;
+    pointer-events: all;  
+    opacity: 1;
+}
+/* .done{
+   
+    position: relative;
+    top: -61px;
+    left: 900px;
+    width: 5vw;
+    height: 4vh;
+    text-align: center;
+    background-color: rgb(6 218 6);
+    color: black;
+    padding-top: 6px;
+    transition-duration: 2s;
+    animation: done 2s 1;
+    
+} */
+
+.time{
+    position: relative;
+    /* border: 2px solid red; */
+    top: -20px;
+    left: 180px;
 }
 
 
-@media (max-width:500px) {
+@keyframes done {
+    from{
+        position: relative;
+        top: -61px;
+        left: 900px;
+        width: 5vw;
+        height: 4vh;
+        text-align: center;
+        background-color: rgb(6 218 6);
+        color: black;
+        padding-top: 6px;
+        display: inline;
+    }
+    to{
+        background-color: white;
+        color: white;
+
+    }
+}
+/* .rotate{
+      animation: rotate 2s 1;
+      animation: rotate 2s 1;
+    left: 466px;
+    border: 2px solid red;
+    position: relative;
+    top: 3px;
+} */
+@keyframes rotate {
+        from{
+            transform: rotate(10deg);
+        }
+        to {
+            transform: rotate(70deg);
+        }
+}
+
+/* button for settigns  */
+.b3{
+    position: relative;
+    top: -38px;   
+    right: -454px;
+    font-size: 23px;
+    width: 27px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    background-color: transparent;
+    
+}     /* end */
+.btn{
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.gr{
+    background-color: cadetblue;
+    color: darkblue;
+    position: relative;
+    left: 85px;
+    top: 6px;
+    border-radius: 10px;
+    border: none;
+    width: 25px;
+    height: 28px;
+    cursor: pointer;
+}
+.colors{
+    border: 2px solid red;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 50px;
+    border: 2px solid red;
+    position: relative;
+    top: -54px;
+    left: 232px;
+    width: 143px;
+    height: 38px;
+    border-radius: 10px;
+    background: beige;
+    display: none;
+}
+#b12{
+    margin-left: 7px;
+}
+@media (max-width:350px) {
+    .plus1{
+        top: 35px;
+    }
+    
+    .footer{
+        top: 87%;
+    }
+    #addText2{
+        top: -2px;
+    }
+    #addText{
+        top: 32px;
+        width: 86%;
+    }
+}
+@media (max-width:425px) {
     .notes{
         border: none;
     }
@@ -374,15 +607,18 @@ header {
     }
     #addText2{
         position: relative;
-        top: -17px;
+        top: -28px;
+    }
+    .plusm{
+        top: -60px;
     }
     .op{
         width: 290px;
     }
     .plus1{
-        position: relative;
+        position: absolute;
         top: 9px;
-        left: 0px;
+        left: 320px;
     }
     #plus{
         position:initial;
@@ -393,9 +629,14 @@ header {
     #hr2{
         top: -13px;
     }
-    .search {
+    /* .search {
         display: none;
+    } */
+    .b3{
+       right: -305px; 
+       font-size: 28px;
     }
+    
 }
 
 
@@ -417,18 +658,6 @@ header {
     opacity: 0.8;
 }      /*  end */
 
-/* button for settigns  */
-.b3{
-    position: relative;
-    top: -38px;   
-    right: -454px;
-    font-size: 23px;
-    width: 27px;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    background-color: transparent;
-}     /* end */
 
 /* for some css to settings icon */
 .fa-cog {
@@ -447,20 +676,28 @@ header {
 }
 .notesm{
     display: inline-block;
+    margin: -4px; /*5*/
+    margin-left: 16px;
+    width: fit-content;
+    height: fit-content;
+}
+.title{
     margin: 5px;
     margin-left: 16px;
 }
 .bar {
-    background-color: yellow;
-    display: inline;
-    width: 227px;
-    height: 60px;
-    position: absolute;
-    top: 3px;
-    left: 268px;
+    /* background-color: yellow; */
+    border: 1px solid black;
+    margin: 0px 27px;
+    border-top: white;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    height: 147px;
     display: none;
-    text-align: center;
-    transform: translate();
+    width:435px;
+    animation:backInDown  0.8s 1;
+    z-index: 71;
+    position: relative;
 }
 .ser {
     color: yellow;
@@ -468,11 +705,70 @@ header {
 
 .footer-icon{
     display:none;
-    margin-top: 100%;
-    width: 100%;
+    background-color: darksalmon;
+    width: 100%;   margin-top: 33px;
+    height: 50px; border-radius: 12px;  
 }
-body{
-    min-height: 100vh;
+
+#img1 {
+    position: relative;
+    top: 8px;
+    left: 29px;
+    background-color: transparent;
+    border: none; cursor: pointer;
+}
+.btn :active + .lasticon{
+    color: red;
+}
+#img2 :active{
+    top: 4px;
+}
+#img3 :active{
+    top: 4px;
+}
+#img2{
+    position: relative;
+    top: 2px;
+    left: 133px;   background-color: transparent;
+    border: none; cursor: pointer;
+}
+#img3{
+    position: relative;
+    top: 7px;
+    left: 246px;  cursor: pointer;
+}
+.iconlast  {
+    position: relative;
+    top: 24px;
+    left: -51px;
+    font-size: 14px; color: #000000b3;
+}
+.activebtn{
+    color: white;
+}
+#lasthr{
+    width: 9%;
+    position: relative;
+    top: -17px;
+    left: -60px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-top: none;
+}
+#lasthr2{
+    width: 9%;
+    position: relative;
+    top: -25px;
+    left: 73px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-top: none;
+}
+.lastfa{
+    left: 13px;
+}
+.lastimp{
+    left: 88px;
 }
 /* for vertical line  */
 .vl {
@@ -489,3 +785,264 @@ svg{
     margin-top: 5px;
     cursor: pointer;
 }  
+.outline{
+    outline: none;
+}
+.option {
+    border: 1px solid red;
+    width: 435px;
+    height: 147px;
+    margin-left: 27px;
+    border-radius: 10px;
+    display: none;
+}
+
+.btn {
+    border-radius: 9px; border: none; width: 27px; height: 26px;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.che{
+    margin-left: 45px;
+    margin-top: 12px;/*15*/
+    cursor: pointer;
+    background-color: cornflowerblue; color: black;
+}   
+.fa{
+margin-left: 1px; font-size: 14px;
+}
+.remove {
+    margin-left: 82px;
+}
+
+.pin {
+    margin-left: 85px;
+}
+
+.time1 {
+    margin-left: 85px;
+}
+
+#hr21 {
+    border-bottom: none;
+    margin-top: 25px;
+}
+
+#hr22 {
+    border-bottom: none;
+    width: 15%;
+    margin-top: -1px;
+    transform: rotate(90deg);
+    margin-left: 78px;
+}
+
+.share {
+    margin-left: 45px;
+}
+
+.color {
+    /* border: 1px solid red; */
+    width: 285px;
+    height: 85px;
+    margin-top: -43px;
+    margin-left: 140px;
+    display: grid;
+    grid-template-columns: repeat(3, 117px);
+    overflow: auto;
+}
+#h2{
+    position: relative;
+    top: -1px;
+    left: 175px; margin: 0;
+}
+/* img {
+    position: relative;
+    top: -44px;
+    left: 418px;
+} */
+.ph{
+    color: red;
+}
+.text {
+    transform: rotate(90deg);
+    color: rosybrown;
+    font-size: 14px;
+    position: relative;
+    top: 130px;
+    left: 206px;
+}
+
+.font {
+    font-size: 10px;
+}
+
+#ch {
+    position: relative;
+    top: -150px;  /*-132*/
+    left: 40px;
+   
+}
+
+#re {
+    position: relative;
+    top: -150px;
+    left: 115px;
+}
+
+#pi {
+    position: relative;
+    top: -150px;
+    left: 197px;
+}
+
+#ti{
+    position: relative;
+    top: -150px;
+    left: 281px;
+}
+
+#sh {
+    position: relative;
+    top: -85px;
+    left: -92px;
+}
+
+.red {
+    margin-left: 12px;
+    background-color: red;
+}
+
+.yellow {
+    margin-left: 12px;
+    background-color: yellow;
+
+}
+.b{
+    background-color: blue;
+}
+.g{
+    background-color: green;
+}
+.li{
+    background-color: lightgreen;
+}
+.sr{
+    background-color: silver;
+}
+.last {
+    margin-left: -5px;
+}
+.timer{
+    position: relative;
+    top: -551px;
+    left: 862px;
+    height: 30px; width: 32%; display: none;
+}
+#time{
+    position: relative;
+    top: -540px;
+    left: 811px;
+}
+#fnotes{
+    display: none;
+}
+
+.mobile{
+    display: none;
+}
+@media (max-width:425px) {  
+    .box{
+        position: relative;
+    }
+    #sea{
+        display: none;
+    }
+    #searchTxt{
+        display: none;
+    }
+    .nV{
+        width: 357px;
+    z-index: 1;
+    position: relative;
+    top: -32px;
+    display: none;
+    opacity: 0.9; 
+    }
+    .container{
+        position: relative;
+        top: -5px;
+        left: 10px;
+    }
+    .note1{
+        width: 68.6%;
+    }
+    .notesn{
+        width: 84.1%;
+    }
+    .option{
+        width: 330px;
+        margin-left: 15px;
+    }
+    .che , .share {
+        margin-left: 17px;
+    }
+    .remove{
+        margin-left: 50px;
+    }
+    .pin{
+        margin-left: 57px;
+    }
+    .time1{
+        margin-left: 60px;
+    }
+    #hr22{
+        margin-left: 51px;
+    }
+    .color{
+        margin-left: 87px;
+        grid-template-columns: repeat(3,97px);
+    }
+    #ch {
+        left: 13px;
+    }
+    #re {
+        left: 57px;
+    }
+    #pi {
+        left: 110px;
+    }
+    #ti {
+        left: 170px;
+    }
+    #sh {
+        top: -74px;
+        left: -117px;
+    }
+    .text{
+        top: 80px;
+    left: 156px;
+    }
+    .timer{
+        display: none;
+    position: relative;
+    top: -135px;
+    left: 109px;
+    border: 2px solid red;
+    height: 83px;
+    width: 57%;
+    }
+    .pc{
+        display: none;
+    }
+    .mobile{
+        display: inline-block;
+    }
+    .footer-icon{
+        display: block; width: 100vw;
+        margin-top: 195px;
+    }
+    #h2{
+        left: 105px;
+    }
+}

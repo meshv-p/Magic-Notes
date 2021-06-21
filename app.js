@@ -163,7 +163,7 @@ function opt() {
                     <button class="btn share" title="Share notes with Your friends and families member." onclick="share()"><i class="fa fa-share"></i></button> <!-- share -->
                     <hr id="hr22">
                     <div class="color">
-                       <button class="btn red" title="Red" id="noten${index}" onclick="redbtn(this.id)"></button> <!-- red -->
+                        <button class="btn red" title="Red" id="noten${index}" onclick="redbtn(this.id)"></button> <!-- red -->
                         <button class="btn b" title="Blue"  id="oten${index}" onclick="bluebtn(this.id)"></button> <!-- blue -->
                         <button class="btn last g" title="Green" id="ten${index}" onclick="greenbtn(this.id)"></button><!--green  -->
                         <button class="btn yellow" title="Yellow" id="en${index}"  onclick="yellowbtn(this.id)"></button>
@@ -203,6 +203,8 @@ function opt() {
                         notesElm.innerHTML = "Nothing to see your notes here. You haven't saved Your  notes. Just type Yuor notes and hit plus button. ";
                      }       
             }
+           
+
                  // for showing color options
              function colored(index) {
                 console.log("i clicked" , index);
@@ -549,7 +551,7 @@ function opt() {
                         document.getElementById('p1').style.backgroundColor = 'initial';
                     }
                 }       
-                //===================for all notes color===========
+            //===================for all notes color===========
              //===================red color==================================
              function redbtn(index){
                 console.log("hi" , index)  //noten0
@@ -635,6 +637,7 @@ function opt() {
                document.getElementById(op).style.display = "none";
             //    console.log("done")
             }
+             
 
                 // for save in localstorage when reload page
 
@@ -691,3 +694,23 @@ function opt() {
                  } 
                  }      
                
+                // drop down menu :
+                /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunctionbar() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }

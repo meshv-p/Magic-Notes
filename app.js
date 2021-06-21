@@ -163,12 +163,12 @@ function opt() {
                     <button class="btn share" title="Share notes with Your friends and families member." onclick="share()"><i class="fa fa-share"></i></button> <!-- share -->
                     <hr id="hr22">
                     <div class="color">
-                        <button class="btn red" title="Red" id="red${index}" onclick="redbtn()"></button> <!-- red -->
-                        <button class="btn b" title="Blue"  id="" onclick="bluebtn()"></button> <!-- blue -->
-                        <button class="btn last g" title="Green" onclick="greenbtn()"></button><!--green  -->
-                        <button class="btn yellow" title="Yellow" onclick="yellowbtn()"></button>
-                        <button class="btn li" title="LightGreen" onclick="lightgreenbtn()"></button>
-                        <button class="btn last sr" title="Silver" onclick="silverbtn()"></button>
+                       <button class="btn red" title="Red" id="noten${index}" onclick="redbtn(this.id)"></button> <!-- red -->
+                        <button class="btn b" title="Blue"  id="oten${index}" onclick="bluebtn(this.id)"></button> <!-- blue -->
+                        <button class="btn last g" title="Green" id="ten${index}" onclick="greenbtn(this.id)"></button><!--green  -->
+                        <button class="btn yellow" title="Yellow" id="en${index}"  onclick="yellowbtn(this.id)"></button>
+                        <button class="btn li" title="LightGreen" id="n${index}" onclick="lightgreenbtn(this.id)"></button>
+                        <button class="btn last sr" title="Silver" id="n${index}" onclick="silverbtn(this.id)"></button>
                     </div>
                     <div class="text">Colors</div>
                     <span class="font " id="ch" >Checked</span>
@@ -549,7 +549,92 @@ function opt() {
                         document.getElementById('p1').style.backgroundColor = 'initial';
                     }
                 }       
-
+                //===================for all notes color===========
+             //===================red color==================================
+             function redbtn(index){
+                console.log("hi" , index)  //noten0
+                var id = index;
+                console.log(id);
+                document.getElementById(id).style.backgroundColor= "red";
+                var op = "po" + index;
+                id.split("");
+                console.log(id[5])
+                var op = "po" + id[5];
+                console.log(op)
+               document.getElementById(op).style.display = "none";
+               console.log("done")
+            }
+             //===================blue color==================================
+             function bluebtn(index){
+                console.log("hi" , index)  //oten0
+                var id =  "n"+ index;
+                console.log(id);
+                document.getElementById(id).style.backgroundColor= "blue";
+                var op = "po" + index;
+                id.split("");
+                console.log(id.split(""))
+                console.log(id[5])
+                var op = "po" + id[5];
+                console.log(op)
+               document.getElementById(op).style.display = "none";
+            //    console.log("done")
+            }
+             //===================green color==================================
+             function greenbtn(index){
+                // console.log("hi" , index)  // ten0
+                var id ="no" + index;
+                console.log(id);
+                document.getElementById(id).style.backgroundColor= "green";
+                var op = "po" + index;
+                id.split("");
+                console.log(id[5])
+                var op = "po" + id[5];
+                // console.log(op)
+               document.getElementById(op).style.display = "none";
+            //    console.log("done")
+            }
+             //===================yellow color==================================
+             function yellowbtn(index){
+                // console.log("hi" , index)  // en0
+                var id ="not" + index;
+                console.log(id);
+                document.getElementById(id).style.backgroundColor= "yellow";
+                var op = "po" + index;
+                id.split("");
+                console.log(id[5])
+                var op = "po" + id[5];
+                // console.log(op)
+               document.getElementById(op).style.display = "none";
+            //    console.log("done")
+            }
+             //===================green color==================================
+             function lightgreenbtn(index){
+                // console.log("hi" , index)  // n0
+                var id ="note" + index;
+                console.log(id);
+                document.getElementById(id).style.backgroundColor= "lightgreen";
+                var op = "po" + index;
+                id.split("");
+                console.log(id[5])
+                var op = "po" + id[5];
+                // console.log(op)
+               document.getElementById(op).style.display = "none";
+            //    console.log("done")
+            }
+             //===================silver color==================================
+             function silverbtn(index){
+                // console.log("hi" , index)  // n0
+                var id ="note" + index;
+                console.log(id);
+                document.getElementById(id).style.backgroundColor= "silver";
+                var op = "po" + index;
+                id.split("");
+                console.log(id[5])
+                var op = "po" + id[5];
+                // console.log(op)
+               document.getElementById(op).style.display = "none";
+            //    console.log("done")
+            }
 
                 // for save in localstorage when reload page
 

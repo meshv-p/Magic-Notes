@@ -160,7 +160,7 @@ function opt() {
                     <button class="btn pin" title="Favorite notes so You can see in favorite section."  id="${index}" onclick="star(this.id)"><i class="fa fa-star"></i></button> <!-- pinned -->
                     <button class="btn time1"  title="Put timer so You dont forget to do that." onclick="timer()"><i  class="fa fa-clock"></i></button><!--time-->
                     <hr id="hr21">
-                    <button class="btn share" title="Share notes with Your friends and families member." onclick="share()"><i class="fa fa-share"></i></button> <!-- share -->
+                    <button class="btn share" title="Share notes with Your friends and families member." id="n${index}" onclick="share(this.id)"><i class="fa fa-share"></i></button> <!-- share -->
                     <hr id="hr22">
                     <div class="color">
                         <button class="btn red" title="Red" id="noten${index}" onclick="redbtn(this.id)"></button> <!-- red -->

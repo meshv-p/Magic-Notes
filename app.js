@@ -450,7 +450,7 @@ function opt() {
                if(navigator.share){
                    navigator.share({
                        title : tit,
-                       text : tit + "\n " + txt
+                       text : tit + " " + txt
                         // url : 'https://meshv-p.github.io/Notes' 
                    }).then(()=>{
                        alert("thanks");

@@ -433,12 +433,25 @@ function opt() {
             }
 
         //================for share=======================
-            function share(){
+           function share(id){
+                console.log(id)
+                var id =  id;
+                c =  id.split("")[1];
+                // console.log(c)
                 // var link = "https://meshv-p.github.io/Notes";
                 // console.log(link);
+                var tit = notesObj[c].title;
+                var txt = notesObj[c].text;
+                // console.log(tit);
+                // console.log(txt);
+                //  let title  = c; 
+                //  let text  = c[0]; 
+              
                if(navigator.share){
                    navigator.share({
-                       title : 'meshv patel', url : 'https://meshv-p.github.io/Notes'
+                       title : tit,
+                       text : txt 
+                        // url : 'https://meshv-p.github.io/Notes' 
                    }).then(()=>{
                        alert("thanks");
                    }                                                         

@@ -727,3 +727,22 @@ function myFunctionbar() {
       }
     }
   }
+// for btn transformation
+  var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      // document.getElementById("out").style.top = "564px";
+      document.getElementById("out").className = "out";
+      document.getElementById("add").style.display = "inline";
+      // document.getElementById("add").style.transition = "20s";
+
+      } else {
+      // document.getElementById("out").style.top = "564px";
+      document.getElementById("out").className = "small";
+       document.getElementById("add").style.display = "none";
+
+
+    }
+      prevScrollpos = currentScrollPos;
+    }

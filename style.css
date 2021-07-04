@@ -87,7 +87,7 @@ body{
 .left ul li {
     list-style: none;
     text-align: left;
-    height: 22px;  /*defalut : none*/
+    height: none;  /*defalut : none*/
 }
 ul{
     margin-top: 7px ;
@@ -603,7 +603,7 @@ header {
     }
     #addText{
         width: 89%;
-        top: 9px;
+        top: 9px; display: none;
     }
     #addText2{
         position: relative;
@@ -618,7 +618,7 @@ header {
     .plus1{
         position: absolute;
         top: 9px;
-        left: 320px;
+        left: 320px; display: none;
     }
     #plus{
         position:initial;
@@ -935,9 +935,21 @@ margin-left: 1px; font-size: 14px;
 }
 .timer{
     position: relative;
-    top: -551px;
-    left: 862px;
-    height: 30px; width: 32%; display: none;
+    top: 60px;
+    left: 435px;
+    border: 1px solid red;
+    height: 30px; width: 23%; display: none;
+    margin: 17px 10px;
+    height: 142px;
+    z-index: 5;
+    background: antiquewhite;
+    border-radius: 10px;
+}
+#Date{
+    margin: 22px;
+}
+#Set{
+    margin: 27px;
 }
 #time{
     position: relative;
